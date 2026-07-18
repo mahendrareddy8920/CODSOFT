@@ -1,10 +1,5 @@
-# -------------------------------
-# Contact Book Application
-# -------------------------------
-
 contacts = []
 
-# Function to Add Contact
 def add_contact():
     print("\n----- Add New Contact -----")
     name = input("Enter Name: ")
@@ -22,7 +17,6 @@ def add_contact():
     contacts.append(contact)
     print("\n✅ Contact Added Successfully!")
 
-# Function to View Contacts
 def view_contacts():
     print("\n----- Contact List -----")
 
@@ -36,7 +30,6 @@ def view_contacts():
     for contact in contacts:
         print("{:<20} {:<15}".format(contact["Name"], contact["Phone"]))
 
-# Function to Search Contact
 def search_contact():
     print("\n----- Search Contact -----")
     search = input("Enter Name or Phone Number: ").lower()
@@ -57,14 +50,12 @@ def search_contact():
     if not found:
         print("❌ Contact not found.")
 
-# Function to Update Contact
 def update_contact():
     print("\n----- Update Contact -----")
     name = input("Enter Contact Name: ").lower()
 
     for contact in contacts:
         if contact["Name"].lower() == name:
-
             print("Leave blank if you don't want to change a field.")
 
             new_phone = input(f"New Phone ({contact['Phone']}): ")
@@ -85,7 +76,6 @@ def update_contact():
 
     print("❌ Contact not found.")
 
-# Function to Delete Contact
 def delete_contact():
     print("\n----- Delete Contact -----")
     name = input("Enter Contact Name: ").lower()
@@ -98,14 +88,11 @@ def delete_contact():
 
     print("❌ Contact not found.")
 
-# Main Program
 while True:
-
     print("\n")
     print("=" * 45)
     print("         CONTACT BOOK APPLICATION")
     print("=" * 45)
-
     print("1. Add Contact")
     print("2. View Contact List")
     print("3. Search Contact")
@@ -117,22 +104,16 @@ while True:
 
     if choice == "1":
         add_contact()
-
     elif choice == "2":
         view_contacts()
-
     elif choice == "3":
         search_contact()
-
     elif choice == "4":
         update_contact()
-
     elif choice == "5":
         delete_contact()
-
     elif choice == "6":
         print("\nThank you for using Contact Book!")
         break
-
     else:
         print("\n❌ Invalid Choice! Please enter a number between 1 and 6.")
