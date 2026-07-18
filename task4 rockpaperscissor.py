@@ -1,6 +1,5 @@
 import random
 
-# Initialize scores
 user_score = 0
 computer_score = 0
 
@@ -16,21 +15,17 @@ print("• Paper beats Rock")
 print("=" * 50)
 
 while True:
-    # User input
     user_choice = input("\nEnter Rock, Paper, or Scissors: ").lower()
 
-    # Validate input
     if user_choice not in choices:
         print("❌ Invalid choice! Please enter Rock, Paper, or Scissors.")
         continue
 
-    # Computer choice
     computer_choice = random.choice(choices)
 
     print(f"\nYou chose      : {user_choice.capitalize()}")
     print(f"Computer chose : {computer_choice.capitalize()}")
 
-    # Determine winner
     if user_choice == computer_choice:
         print("\n🤝 It's a Tie!")
 
@@ -46,13 +41,11 @@ while True:
         print("\n💻 Computer Wins!")
         computer_score += 1
 
-    # Display score
     print("\nCurrent Score")
     print("-" * 20)
     print(f"You       : {user_score}")
     print(f"Computer  : {computer_score}")
 
-    # Play again
     play_again = input("\nDo you want to play again? (yes/no): ").lower()
 
     if play_again != "yes":
